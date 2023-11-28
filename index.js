@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const renderLicenseBadge = require('./utils/generateMarkdown.js');
+const renderLicenseLink = require('./utils/generateMarkdown.js');
 const fs = require('fs')
 
 // TODO: Create an array of questions for user input
@@ -49,10 +51,10 @@ const questions = [
     },
     //License
     {
-        type: 'list',
-        name: 'License',
+        type: 'rawlist',
+        name: 'license',
         message: 'Please select a License',
-        choices: [ 'MIT', 'Apache 2.0', 'Open Software License 3.0', 'Microsoft Public License', 'none' ],
+        choices: [ 'MIT', 'Apache 2.0', 'Creative Commons 0', 'none' ],
         validate: licenseInput => {
             if (licenseInput) {
                 return true
@@ -77,8 +79,10 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then((data) => {
-        console.log(JSON.stringify(data,null, ""));
-        writeToFile("./example/README.md", data);
+        console.log(JSON.stringify(data, null, " "));
+        renderLicenseBadge(data);
+        renderLicenseLink(data);
+        writeToFile("./README.md", data);
     });
 }
 
