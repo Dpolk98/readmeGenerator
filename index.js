@@ -39,7 +39,7 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: "Please describe the installation process for your project (hint: use \ to begin a new line without submitting what you've typed",
+        message: "Please describe the installation process for your project (hint: use the backslash key to begin a new line without submitting what you've typed",
         validate: installInput => {
             if (installInput) {
                 return true

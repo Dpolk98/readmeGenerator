@@ -3,6 +3,6 @@
     "inquirer": "^8.2.6"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "npm i && node index.js"
   }
 }

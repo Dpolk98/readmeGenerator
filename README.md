@@ -1,14 +1,14 @@
 # Project Title
-  1
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  Readme Generator
+  null
   
   # Description
-  2
+  a simple CLI project to make writing README files easier
       
   # Installation
-  3
+  copy the git repo to a chosen folder on your pc, and then run the command npm run start
   
   # License 
-  MIT
-  https://opensource.org/license/mit/
+  none
+  no license selected
   
